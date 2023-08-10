@@ -5,7 +5,16 @@
 int main(void)
 {
     OptSportFactory *factory = create_factory(ADIDAS);
+    if (factory->is_none) {
+        printf("factory is none\n");
+        exit(EXIT_FAILURE);
+    }
+
     OptSportFactory *factory2 = create_factory(NIKE);
+    if (factory2->is_none) {
+        printf("factory2 is none\n");
+        exit(EXIT_FAILURE);
+    }
 
     SportFactory *nike = factory->some;
     SportFactory *adidas = factory2->some;
