@@ -1,5 +1,6 @@
 #include "sport_factory.h"
 #include <stdio.h>
+#include <stdlib.h>
 
 int main(void)
 {
@@ -13,4 +14,6 @@ int main(void)
 
     printf("adidas->brand_name: %s\nadidas->size: %d\n", adidas->brand_name,
            adidas->size);
+    free(factory);
+    free(factory2);
 }
