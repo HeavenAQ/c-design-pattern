@@ -3,13 +3,13 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-static void make_shoes(SportFactory *factory)
+static void make_shoes(const SportFactory *factory)
 {
     printf("brand_name: %s\n", factory->brand_name);
     printf("Size: %d\n", factory->size);
 }
 
-static void make_shirts(SportFactory *factory)
+static void make_shirts(const SportFactory *factory)
 {
     printf("brand_name: %s\n", factory->brand_name);
     printf("Size: %d\n", factory->size);
@@ -18,8 +18,8 @@ static void make_shirts(SportFactory *factory)
 OptSportFactory *create_nike_factory()
 {
     SportFactory *factory = (SportFactory *)malloc(sizeof(OptSportFactory));
-    factory->make_shoes = make_shoes;
-    factory->make_shirts = make_shirts;
+    factory->make_shoes = &make_shoes;
+    factory->make_shirts = &make_shirts;
     factory->brand_name = "Nike";
     factory->size = 42;
 

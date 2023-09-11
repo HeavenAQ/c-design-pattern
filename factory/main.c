@@ -16,8 +16,8 @@ int main(void)
         exit(EXIT_FAILURE);
     }
 
-    SportFactory *nike = factory->some;
-    SportFactory *adidas = factory2->some;
+    const SportFactory *nike = factory->some;
+    const SportFactory *adidas = factory2->some;
     printf("nike->brand_name: %s\nnike->size: %d\n", nike->brand_name,
            nike->size);
 
